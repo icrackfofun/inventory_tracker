@@ -1,0 +1,1 @@
+# Django_miniproject_inventory_tracker
