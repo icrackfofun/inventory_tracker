@@ -1,0 +1,24 @@
+{% extends "inventory_tracker/base.html" %}
+
+{% block heading %}Menu Items{% endblock %}
+
+{% block content %}
+<a href="{% url 'home' %}"><button>Home</button></a>
+<table id="menuitems">
+  <tr>
+    <th>Item</th>
+    <th>Price</th>
+    <th></th>
+    <th></th>
+  </tr>
+  {% for menuitems in menuitems_list %}
+  <tr>
+    <td>{{ menuitems.item }}</td>
+    <td>{{ menuitems.price }}</td>
+    <td><a href="{% url 'menuitemsdelete' menuitems.id %}"><button>Delete</button></a></td>
+    <td></td>
+  </tr>
+  {% endfor %}
+</table>
+<a href="{% url 'menuitemscreate' %}"><button>Add</button></a>
+{% endblock %}

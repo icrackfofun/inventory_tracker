@@ -1,0 +1,24 @@
+{% extends 'inventory_tracker/base.html' %}
+{% block heading %}
+<h1>Home</h1>
+{% if user.is_authenticated %}
+    <p>Hello, {{ user.username }}!</p>
+    <!-- logout button-->
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Log Out</button>
+      </form> 
+{% else %}
+    <a href="{% url 'login' %}"><button>Log In</button></a>  
+    <a href="{% url 'signup' %}"><button>Sign Up</button></a>   
+{% endif %}
+<br>
+<br>
+{% endblock %}
+{%block content%}
+<a href="{% url 'ingredientslist' %}"><button>Ingredients</button></a>
+<a href="{% url 'menuitemslist' %}"><button>Menu Items</button></a>
+<a href="{% url 'itemrequirementslist' %}"><button>Item Requirements</button></a>
+<a href="{% url 'purchaseslist' %}"><button>Purchases</button></a>
+<a href="{% url 'profitandloss' %}"><button>Profit & Loss</button></a>
+{%endblock%}

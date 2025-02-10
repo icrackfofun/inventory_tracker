@@ -1,0 +1,26 @@
+{% extends "inventory_tracker/base.html" %}
+
+{% block heading %}Ingredients{% endblock %}
+
+{% block content %}
+<a href="{% url 'home' %}"><button>Home</button></a>
+<table id="ingredients">
+  <tr>
+    <th>Ingredient</th>
+    <th>Quantity</th>
+    <th>Price Per Unit</th>
+    <th></th>
+    <th></th>
+  </tr>
+  {% for ingredients in ingredients_list %}
+  <tr>
+    <td>{{ ingredients.ingredient }}</td>
+    <td>{{ ingredients.quantity }}</td>
+    <td>{{ ingredients.price_per_unit }}</td>
+    <td><a href = "{% url 'ingredientsdelete' ingredients.id %}"><button>Delete</button></a></td>
+    <td><a href = "{% url 'ingredientsupdate' ingredients.id %}"><button>Update</button></a></td>
+  </tr>
+  {% endfor %}
+</table>
+<a href="{% url 'ingredientscreate' %}"><button>Add</button></a>
+{% endblock %}

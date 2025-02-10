@@ -1,0 +1,28 @@
+{% extends "inventory_tracker/base.html" %}
+
+{% block heading %}Purchases{% endblock %}
+
+{% block content %}
+<a href="{% url 'home' %}"><button>Home</button></a>
+<table id="purchases">
+  <tr>
+    <th>Item</th>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Price</th>
+    <th></th>
+    <th></th>
+  </tr>
+  {% for purchases in purchases_list %}
+  <tr>
+    <td>{{ purchases.item }}</td>
+    <td>{{ purchases.date }}</td>
+    <td>{{ purchases.time }}</td>
+    <td>{{ purchases.price }}</td>
+    <td><a href="{% url 'purchasesdelete' purchases.id %}"><button>Delete</button></a></td>
+    <td></td>
+  </tr>
+  {% endfor %}
+</table>
+<a href="{% url 'purchasescreate' %}"><button>Add</button></a>
+{% endblock %}
