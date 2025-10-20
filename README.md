@@ -1,7 +1,7 @@
-# Django_miniproject_inventory_tracker
+# Inventory Tracker
 
 Welcome to the inventory_tracker web app.
-It's a simple app that keeps track of a fictitious restaurant's inventory, through 4 Models.(Ingredients, MenuItems, ItemRequirements and Purchases). 
+It's a simple app that keeps track of a fictitious restaurant's inventory, through 4 Models (Ingredients, MenuItems, ItemRequirements and Purchases). 
 - You can view the Database details in the models.py file (including table relations).
 
 This is a Micro-Project of mine using the Django Framework, to practice the following:
